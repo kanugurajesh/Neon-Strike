@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5ef" />
+    <meta name="description" content="A procedural third-person character playground, built entirely with Three.js geometry." />
+    <title>Kinetic — Movement Lab</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23242c24'/%3E%3Cpath d='M12 9v22m17-22L12 22l17 9' stroke='%23d2f96e' stroke-width='5' fill='none'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Kinetic home"><span class="brand-icon">k</span>kinetic<span class="brand-dot">®</span></a>
+        <div class="breadcrumb">PLAYGROUND <span>/</span> <strong>Movement lab</strong></div>
+        <div class="version"><span class="status-dot"></span> PROTOTYPE <span class="version-number">v0.1</span></div>
+      </header>
+      <main>
+        <section class="page-heading"><div><div class="eyebrow">SMALL EXPERIMENTS. GOOD MOVEMENT.</div><h1>Movement lab<span>.</span></h1><p>A little character. A space to move. All made of code.</p></div><button id="reset" class="reset-button"><span>↺</span> Reset position <kbd>R</kbd></button></section>
+        <div class="workspace">
+          <section class="viewport" aria-label="Interactive 3D movement arena">
+            <canvas id="game" tabindex="0" aria-label="3D arena. WASD to move, Shift to run, Space to jump. Drag to orbit the camera."></canvas>
+            <div class="scene-top"><span class="scene-tag"><span class="status-dot"></span> LIVE PLAYGROUND</span><span class="scene-name">01 / THE TRAINING GROUND</span></div>
+            <div class="scene-caption"><span class="mini-cross">+</span><span>Room to find your stride.</span></div>
+            <div id="camera-hint" class="camera-hint"><span>⌖</span> Drag to look around <span class="hint-divider">/</span> Scroll to zoom</div>
+            <div class="scene-bottom"><span><span class="status-dot"></span> <span id="fps">60</span> FPS</span><span>THREE.JS · REAL-TIME 3D</span></div>
+            <div class="compass" aria-label="Camera compass"><span>N</span><div id="compass-needle">↑</div></div>
+            <div id="error" role="alert" hidden></div>
+          </section>
+          <aside>
+            <section class="panel subject-panel"><div class="panel-label">YOUR CHARACTER <span>01</span></div><div class="subject-title"><h2>Meet Mono.</h2><span class="pill">PROCEDURAL</span></div><p>Simple shapes. A little personality.</p><div class="character-preview"><svg viewBox="0 0 240 124" aria-label="Illustration of the procedural humanoid"><ellipse cx="120" cy="112" rx="37" ry="5" fill="#dfe4d5"/><g stroke="#26352c" stroke-width="2" stroke-linejoin="round"><path d="M106 77l-3 29h13l5-29m4 0 2 29h13l-5-29" fill="#52665c"/><path d="M102 104h14v7H99v-5zm25 0h13l5 7h-18z" fill="#273a31"/><rect x="114" y="34" width="13" height="10" rx="4" fill="#52665c"/><path d="M105 43q15-8 30 0l3 30-7 10h-21l-8-10z" fill="#f59564"/><rect x="104" y="7" width="33" height="31" rx="11" fill="#f7ad7d"/><rect x="109" y="17" width="25" height="10" rx="4" fill="#273a31"/><path d="M115 20v3m13-3v3" stroke="#dcf8a7"/><path d="M104 46 93 65l-3 22m47-41 10 19 5 20" fill="none" stroke="#52665c" stroke-width="9"/><path d="m104 46-10 17m43-17 9 17" stroke="#f59564" stroke-width="12"/><circle cx="90" cy="88" r="6" fill="#f7ad7d"/><circle cx="153" cy="87" r="6" fill="#f7ad7d"/><path d="M114 49h13v8h-13z" fill="#ffcb96" stroke="none"/></g><g fill="#83917f" font-family="monospace" font-size="8"><text x="24" y="28">100%</text><text x="18" y="40">GEOMETRY</text><text x="177" y="76">NO ASSETS</text></g><path d="M70 34h21m64 46h17" stroke="#b5c1ad" stroke-dasharray="2 3"/></svg></div><div class="state-row"><span><span class="status-dot"></span> Current state</span><strong id="state" class="state-pill">Idle</strong></div><div class="metrics"><div><span>SPEED</span><strong><span id="speed">0.0</span> <small>m/s</small></strong></div><div><span>ON GROUND</span><strong id="grounded">Yes <span class="ground-indicator">↧</span></strong></div></div></section>
+            <section class="panel controls-panel"><div class="panel-label">MAKE YOUR MOVE <span>↗</span></div><div class="control-row"><div class="wasd"><kbd>W</kbd><div><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></div></div><div><strong>Move around</strong><span>Relative to your camera</span></div></div><div class="control-row"><div class="key-slot"><kbd>SHIFT</kbd></div><div><strong>Pick up the pace</strong><span>Hold to run</span></div></div><div class="control-row"><div class="key-slot"><kbd>SPACE</kbd></div><div><strong>Catch some air</strong><span>Press to jump</span></div></div><div class="control-row"><div class="key-slot"><span class="mouse-icon"></span></div><div><strong>A new perspective</strong><span>Drag to orbit · scroll to zoom</span></div></div></section>
+            <div class="note"><span>✳</span><p>Built from primitives.<br><strong>Ready for possibilities.</strong></p></div>
+          </aside>
+        </div>
+        <footer><span><span class="footer-dot"></span> THE SANDBOX IS YOURS. GO EXPLORE.</span><span>Geometry, gravity & a bit of curiosity. <span class="footer-mark">↗</span></span></footer>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
